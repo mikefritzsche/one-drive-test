@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Outlet} from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import AuthenticationComponent from "./AuthenticationComponent.jsx";
 
 const OneDrive = () => {
@@ -11,7 +11,6 @@ const OneDrive = () => {
           <Link to="/onedrive/upload">Upload</Link>
       </div>
       <AuthenticationComponent>
-      {/*<OneDriveComponent />*/}
         <Outlet/>
       </AuthenticationComponent>
 

@@ -1,7 +1,6 @@
 // App.js
 import React from 'react';
-import {Routes, Route, Link, defer} from "react-router-dom"
-import AuthenticationComponent from './components/one-drive/AuthenticationComponent.jsx';
+import { Link } from "react-router-dom"
 import OneDriveList from './components/one-drive/components/OneDriveList.jsx';
 import OneDriveFileUpload from "./components/one-drive/components/OneDriveFileUpload.jsx";
 import OneDrive from './components/one-drive'

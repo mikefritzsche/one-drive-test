@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { getGraphClient } from '../graphClient'
 import { useAuth } from '../AuthProvider'
+import DeleteItem from "./DeleteItem.jsx";
 
 const OneDriveList = () => {
   const [files, setFiles] = useState([]);
@@ -13,6 +14,7 @@ const OneDriveList = () => {
       try {
         const client = await getGraphClient();
         const response = await client.api('/me/drive/root/children').get();
+        console.log('fetchFiles resp: ', response)
         setFiles(response.value);
       } catch (error) {
         console.error('Error fetching files:', error);
@@ -41,7 +43,11 @@ const OneDriveList = () => {
       {error ? <p>Error: {error}</p> : null}
       <ul>
         {files.map((file, index) => (
-          <li key={index}>{file.name} {<a href={file.webUrl} target="_blank" rel="noopener noreferrer">Link</a>}</li>
+          <li key={index} style={{ display: 'flex', gap: 8 }}>
+            {file.name}
+            <a href={file.webUrl} target="_blank" rel="noopener noreferrer">Open</a>
+            <DeleteItem itemId={file.id}/>
+          </li>
         ))}
       </ul>
     </div>
