@@ -1,9 +1,9 @@
-// OneDriveComponent.js
-import React, { useEffect, useState } from 'react';
-import { getGraphClient } from './graphClient';
-import { useAuth } from './AuthProvider.jsx';
+// OneDriveList.js
+import React, { useEffect, useState } from 'react'
+import { getGraphClient } from '../graphClient'
+import { useAuth } from '../AuthProvider'
 
-const OneDriveComponent = () => {
+const OneDriveList = () => {
   const [files, setFiles] = useState([]);
   const [error, setError] = useState(null);
   const { isAuthenticated, login, logout } = useAuth();
@@ -36,7 +36,7 @@ const OneDriveComponent = () => {
 
   return (
     <div>
-      <h1>My OneDrive Files</h1>
+      <h1>OneDrive</h1>
       <button onClick={logout}>Logout</button>
       {error ? <p>Error: {error}</p> : null}
       <ul>
@@ -48,4 +48,4 @@ const OneDriveComponent = () => {
   );
 };
 
-export default OneDriveComponent;
+export default OneDriveList;

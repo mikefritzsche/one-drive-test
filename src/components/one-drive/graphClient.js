@@ -1,7 +1,7 @@
 // graphClient.js
 import { Client } from '@microsoft/microsoft-graph-client';
-import { msalInstance } from './msalInstance';
-import { loginRequest } from './msalConfig';
+import { msalInstance } from './msalInstance.js';
+import { loginRequest } from './msalConfig.js';
 
 const getToken = async () => {
   const accounts = msalInstance.getAllAccounts();

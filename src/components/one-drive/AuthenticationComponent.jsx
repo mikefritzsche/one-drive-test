@@ -1,7 +1,7 @@
 // AuthenticationComponent.js
 import React from 'react';
 import { MsalProvider } from '@azure/msal-react';
-import { msalInstance } from './msalInstance';
+import { msalInstance } from './msalInstance.js';
 import { AuthProvider } from './AuthProvider.jsx';
 
 const AuthenticationComponent = ({ children }) => {

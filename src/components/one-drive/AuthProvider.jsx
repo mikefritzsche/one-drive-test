@@ -1,7 +1,7 @@
 // AuthProvider.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { msalInstance } from './msalInstance';
-import { loginRequest } from './msalConfig';
+import { msalInstance } from './msalInstance.js';
+import { loginRequest } from './msalConfig.js';
 import { useMsal } from '@azure/msal-react';
 import { InteractionRequiredAuthError } from '@azure/msal-browser';
 
